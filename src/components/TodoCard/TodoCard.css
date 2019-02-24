@@ -1,0 +1,18 @@
+.TodoCard {
+  padding: 16px;
+  margin: 16px 0;
+  width: 100%;
+  box-sizing: border-box;
+
+  background-color: white;
+  word-break: break-all;
+  display: flex;
+  align-items: center;
+}
+
+.TodoCard-content {
+  width: 80%;
+}
+.TodoCard-button {
+  margin-left: auto;
+}
