@@ -1,0 +1,38 @@
+.TodoInput {
+  width: 100%;
+  padding: 8px;
+
+  border: 1px solid #e91e63;
+  border-radius: 8px;
+}
+.TodoInput-mascot {
+  height: 104px;
+}
+.TodoInput-header {
+  width: 100%;
+  display: flex;
+}
+.TodoInput-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.5rem;
+
+  color: white;
+}
+.TodoInput-input {
+  margin-top: 8px;
+}
+.TodoInput-inputbox {
+  padding: 16px;
+  width: 100%;
+  border-radius: 8px;
+  border-color: none;
+  font-size: 1rem;
+}
+.TodoInput-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}

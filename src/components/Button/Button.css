@@ -1,0 +1,15 @@
+.button {
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  transition: all 0.2s ease-in-out;
+}
+.button.pink {
+  background-color: #e91e63;
+  color: white;
+}
+.button.pink:hover {
+  background-color: #b4164b;
+}
