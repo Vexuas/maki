@@ -6,9 +6,14 @@ class TodoList extends Component {
   render() {
     return (
       <div className="TodoList">
-        {this.props.todos.map(todo => {
+        {this.props.todos.map((todo, index) => {
           return (
-            <TodoCard todo={todo} key={todo.created_at.getMilliseconds()} />
+            <TodoCard
+              todo={todo}
+              key={todo.created_at.getMilliseconds()}
+              index={index}
+              removeTodo={this.props.removeTodo}
+            />
           );
         })}
       </div>

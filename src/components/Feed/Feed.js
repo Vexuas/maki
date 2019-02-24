@@ -20,6 +20,7 @@ class Feed extends Component {
     };
 
     this.addTodo = this.addTodo.bind(this);
+    this.removeTodo = this.removeTodo.bind(this);
   }
   addTodo(title) {
     const t = new Todo(title);
@@ -29,11 +30,18 @@ class Feed extends Component {
       todos: todos
     });
   }
+  removeTodo(index) {
+    let todos = this.state.todos;
+    todos.splice(index, 1);
+    this.setState({
+      todos: todos
+    });
+  }
   render() {
     return (
       <div className="Feed">
         <TodoInput addTodo={this.addTodo} todos={this.state.todos} />
-        <TodoList todos={this.state.todos} />
+        <TodoList todos={this.state.todos} removeTodo={this.removeTodo} />
       </div>
     );
   }

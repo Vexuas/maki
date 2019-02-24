@@ -9,7 +9,13 @@ export const TodoCard = props => {
         <span>{props.todo.title}</span>
       </div>
       <div className="TodoCard-button">
-        <Button color="pink" text="Complete" />
+        <Button
+          color="pink"
+          text="Complete"
+          action={() => {
+            props.removeTodo(props.index);
+          }}
+        />
       </div>
     </article>
   );
