@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./TodoInput.css";
 import { Button } from "../Button/Button";
+import { Input } from "../Input/Input";
 
 function messageDecorator(todos) {
   const length = todos.length;
@@ -11,28 +12,39 @@ function messageDecorator(todos) {
     return `${length} Todos`;
   }
 }
-
+function formValidator(value) {
+  return value.length > 0;
+}
 class TodoInput extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      value: ""
+      value: "",
+      hasError: false
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearForm = this.clearForm.bind(this);
   }
   handleChange(event) {
+    const value = event.target.value;
     this.setState({
-      value: event.target.value
+      value: value,
+      hasError: !formValidator(value)
     });
   }
   handleSubmit(event) {
-    event.preventDefault();
     const value = this.state.value;
-    this.props.addTodo(value);
-    this.clearForm();
+    if (formValidator(value)) {
+      this.props.addTodo(value);
+      this.clearForm();
+    } else {
+      this.setState({
+        hasError: true
+      });
+    }
+    event.preventDefault();
   }
   clearForm() {
     this.setState({
@@ -54,11 +66,10 @@ class TodoInput extends Component {
           </div>
         </div>
         <form className="TodoInput-input" onSubmit={this.handleSubmit}>
-          <input
-            className="TodoInput-inputbox"
-            required
+          <Input
             value={this.state.value}
-            onChange={this.handleChange}
+            handleChange={this.handleChange}
+            hasError={this.state.hasError}
           />
           <div className="TodoInput-buttons">
             <Button text="Add Todo" color="pink" action={this.handleSubmit} />

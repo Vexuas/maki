@@ -24,13 +24,6 @@
 .TodoInput-input {
   margin-top: 8px;
 }
-.TodoInput-inputbox {
-  padding: 16px;
-  width: 100%;
-  border-radius: 8px;
-  border-color: none;
-  font-size: 1rem;
-}
 .TodoInput-buttons {
   display: flex;
   justify-content: flex-end;
