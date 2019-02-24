@@ -21,6 +21,7 @@ class TodoInput extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.clearForm = this.clearForm.bind(this);
   }
   handleChange(event) {
     this.setState({
@@ -28,9 +29,15 @@ class TodoInput extends Component {
     });
   }
   handleSubmit(event) {
-    console.log("hello");
-
     event.preventDefault();
+    const value = this.state.value;
+    this.props.addTodo(value);
+    this.clearForm();
+  }
+  clearForm() {
+    this.setState({
+      value: ""
+    });
   }
 
   render() {
