@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/maki/static/css/main.914d2657.chunk.css"
   },
   {
-    "revision": "e9ccf3b1bb25895b47dcfa45e860893c",
+    "revision": "fc7243119061c2c61712fb995f1be2d3",
     "url": "/maki/index.html"
   }
 ];
